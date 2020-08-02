@@ -45,9 +45,11 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 BUILD_FINGERPRINT := "google/flame/flame:10/QQ3A.200705.002/6506677:user/release-keys"
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.build.fingerprint=google/flame/flame:10/QQ3A.200705.002/6506677:user/release-keys
+    ro.build.fingerprint=google/flame/flame:10/QQ3A.200705.002/6506677:user/release-keys \
+    ro.product.odm.name=flame
 
-BOARD_PREBUILT_VENDORIMAGE := vendor/images/flame/vendor.img
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml
 
 $(call inherit-product-if-exists, vendor/google/flame/flame-vendor.mk)
 $(call inherit-product-if-exists, vendor/pixelgapps/pixel-gapps.mk)
