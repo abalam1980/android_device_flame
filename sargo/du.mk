@@ -37,8 +37,10 @@ BUILD_FINGERPRINT := "google/sargo/sargo:10/QQ3A.200705.002/6506677:user/release
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.fingerprint=google/sargo/sargo:10/QQ3A.200705.002/6506677:user/release-keys
+    ro.product.odm.name=sargo
 
-BOARD_PREBUILT_VENDORIMAGE := vendor/images/sargo/vendor.img
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml
 
 $(call inherit-product-if-exists, vendor/google/sargo/sargo-vendor.mk)
 $(call inherit-product-if-exists, vendor/pixelgapps/pixel-gapps.mk)
