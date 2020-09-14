@@ -10,6 +10,11 @@
    "branch":      "q10x"
  },
  {
+   "repository":  "DirtyUnicorns/android_external_json-c",
+   "target_path": "external/json-c",
+   "branch":      "q10x"
+ },
+ {
    "repository":  "DirtyUnicorns/android_kernel_google_floral",
    "target_path": "kernel/google/floral",
    "branch":      "q10x"
