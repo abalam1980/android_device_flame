@@ -1,4 +1,4 @@
-# Copyright (C) 2018-2019 The Dirty Unicorns Project
+# Copyright (C) 2018-2020 The Dirty Unicorns Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -31,15 +31,12 @@ PRODUCT_MANUFACTURER := Google
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME="sargo" \
     TARGET_DEVICE="sargo" \
-    PRIVATE_BUILD_DESC="sargo-user 10 QQ3A.200805.001 6578210 release-keys"
+    PRIVATE_BUILD_DESC="sargo-user 11 RP1A.201005.004 6782484 release-keys"
 
-BUILD_FINGERPRINT := "google/sargo/sargo:10/QQ3A.200805.001/6578210:user/release-keys"
+BUILD_FINGERPRINT := "google/sargo/sargo:11/RP1A.201005.004/6782484:user/release-keys"
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.build.fingerprint=google/sargo/sargo:10/QQ3A.200805.001/6578210:user/release-keys
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml
+    ro.build.fingerprint=google/sargo/sargo:11/RP1A.201005.004/6782484:user/release-keys
 
 $(call inherit-product-if-exists, vendor/google/sargo/sargo-vendor.mk)
 $(call inherit-product-if-exists, vendor/pixelgapps/pixel-gapps.mk)
