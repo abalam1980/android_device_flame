@@ -2,7 +2,7 @@
  {
    "repository":  "DirtyUnicorns/android_device_google_bonito",
    "target_path": "device/google/bonito",
-   "branch":      "q10x"
+   "branch":      "r11x"
  },
  {
    "repository":  "DirtyUnicorns/android_device_google_bonito-sepolicy",
