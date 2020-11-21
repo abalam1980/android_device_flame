@@ -14,5 +14,9 @@
 # limitations under the License.
 #
 
+
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/du.mk
+    $(LOCAL_DIR)/gzosp_flame.mk 
+
+COMMON_LUNCH_CHOICES := \
+    gzosp_flame-userdebug    
