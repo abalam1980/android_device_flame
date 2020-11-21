@@ -18,34 +18,28 @@
 # device-specific aspects (drivers) with a device-agnostic
 # product configuration (apps). Except for a few implementation
 # details, it only fundamentally contains two inherit-product
-# lines, aosp and du, hence its name.
+# lines, aosp and gzosp, hence its name.
 #
 
-# Include DU common configuration
-include vendor/du/config/common_full_phone.mk
+# Inherit some common gzosp stuff.
+$(call inherit-product, vendor/gzosp/config/common_full_phone.mk)
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, device/google/coral/aosp_flame.mk)
 
-# Inherit from the common Open Source product configuration
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+-include device/google/coral/device-gzosp.mk
 
-PRODUCT_NAME := du_flame
+PRODUCT_BRAND := google
 PRODUCT_DEVICE := flame
-PRODUCT_BRAND := Google
 PRODUCT_MODEL := Pixel 4
+PROSUCT_NAME := gzosp_flame
 PRODUCT_MANUFACTURER := Google
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME="flame" \
-    TARGET_DEVICE="flame" \
-    PRIVATE_BUILD_DESC="flame-user 11 RP1A.201005.004 6782484 release-keys"
+    PRIVATE_BUILD_DESC="flame-user RP1A.201105.002 6869500 release-keys"
 
-BUILD_FINGERPRINT := "google/flame/flame:11/RP1A.201005.004/6782484:user/release-keys"
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.build.fingerprint=google/flame/flame:11/RP1A.201005.004/6782484:user/release-keys
+BUILD_FINGERPRINT := "google/flame/flame:11/RP1A.201105.002/6869500:user/release-keys"
 
 $(call inherit-product-if-exists, vendor/google/flame/flame-vendor.mk)
 $(call inherit-product-if-exists, vendor/pixelgapps/pixel-gapps.mk)
